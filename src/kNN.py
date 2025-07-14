@@ -12,19 +12,10 @@ def normalized_knn_score(X_train, x_test):
     return scores[idx], idx
 
 def cosine_similarity_score(X_train, x_test):
-    # 计算训练数据向量的L2范数
     X_train_norm = np.linalg.norm(X_train, axis=1)
-
-    # 计算测试向量的L2范数
     x_test_norm = np.linalg.norm(x_test)
-
-    # 计算余弦相似度 = dot(x_i, x_test) / (||x_i|| * ||x_test||)
     cosine_similarity = np.dot(X_train, x_test) / (X_train_norm * x_test_norm + 1e-8)
-
-    # 将余弦相似度转换为余弦距离
     cosine_distance = 1 - cosine_similarity
-
-    # 找到最小余弦距离（最相似的邻居）
     min_distance = np.min(cosine_distance)
     min_index = np.argmin(cosine_distance)
 
