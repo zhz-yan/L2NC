@@ -87,10 +87,11 @@ if __name__ == '__main__':
     for unknown_class in range(11):
         args.unknown = [unknown_class]
         for repeat_id in range(1):
-            res = case_1(args, repeat_id)
+            res = case_1(args)
 
             json_path = f"results/case_1/{args.dataset}/{str(args.unknown[0])}/{str(repeat_id)}.json"
             os.makedirs(os.path.dirname(json_path), exist_ok=True)
             with open(json_path, 'w') as f:
                 json.dump(res, f, indent=4, separators=(",", ": "))
             print(f"Saved results to {json_path}")
+
