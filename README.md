@@ -17,19 +17,19 @@ You can replicate the experimental results reported in the paper using the follo
 #### 1. Reproduce Single Unknown Scenario (Scenario 1)
 This script runs the evaluation where one appliance type is treated as unknown at a time.
 
-  ```bash
-  python src/exp_5_1.py
-  ```
+```bash
+python src/exp_5_1.py
+```
 
 #### 2. Reproduce Varying Openness Scenario (Scenario 2)
 This script evaluates the model under different degrees of openness (varying number of unknown classes).
 
-  ```bash
-  python src/exp_5_2.py
+```bash
+python src/exp_5_2.py
+```
 
 ## Output
 After running the scripts, the evaluation metrics will be printed to the console and saved to the src/results/ directory for analysis.
-
 
 ## Requirements
 
